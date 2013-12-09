@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coder Manual">
+    <meta name="author" content="gocreating">
+
+    <title><%= title %></title>
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    
+    <style>
+      body {
+        padding-top: 70px;
+        /*padding-bottom: 50px;*/
+      }
+      .footer {
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Coder Manual</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Documentation</a></li>            
+            <li><a href="#">About</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+              <% if(!user) { %>
+                <ul class="dropdown-menu">
+                  <li><a href="/login"><span class="fa fa-user"></span> Login</a></li>
+                  <li><a href="/signup"><span class="fa fa-sign-in"></span> Signup</a></li>
+                </ul>
+              <% } else { %>
+                <ul class="dropdown-menu">
+                  <li><a href="/profile"><span class="fa fa-anchor"></span> Profile</a></li>
+                  <li class="divider"></li>
+                  <!-- <li class="dropdown-header">Nav header</li> -->
+                  <li><a href="/logout"><span class="fa fa-user"></span> Logout</a></li>
+                </ul>
+              <% } %>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+      <%- body %>
+
+      <!-- Site footer -->      
+      <div class="footer">
+          <p>&copy; Coder Manual 2013</p>
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  </body>
+</html>
