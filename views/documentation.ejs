@@ -1,4 +1,6 @@
-<%- contentFor('body') %>
+<%- contentFor('body') %>	
+	<script src="http://demos.flesler.com/jquery/scrollTo/js/jquery.scrollTo-min.js">
+	</script>
 	<script type="text/javascript">
 		$(function () {
 			// Set the scroll range that triggers affix
@@ -10,6 +12,12 @@
 			});
 
 			$('body').scrollspy({ target: '#sidebar' });
+
+			$('#sidebar').on('activate.bs.scrollspy', function () {
+				var href = $('#sidebar .active:first > a').attr('href');
+				// console.log(href);
+				$('#sidebar').scrollTo($('a[href='+href+']'), 500);
+			})
 		});
 	</script>
 
@@ -37,12 +45,26 @@
 			width:212px;
 		}
 
-		.nav .nav>li>a {
+		#sidebar {
+			max-height: 300px;
+			overflow-y: auto;
+		}
+
+		#sidebar .nav-pills>li.active>a {
+			background-color: #39b3d7;
+		}
+
+		#sidebar .nav .nav>li>a {
 			margin-left: 30px;
 		}
 
-		.nav .nav .nav>li>a {
+		#sidebar .nav .nav .nav>li>a {
 			margin-left: 60px;
+		}
+
+		#sidebar .nav>li>a {
+			padding: 3px 6px;
+			margin: 3px 0px;
 		}
 	</style>
 
