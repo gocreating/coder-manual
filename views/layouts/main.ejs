@@ -9,7 +9,8 @@
 
     <title><%= title %></title>
     <link href="/stylesheets/style.css" rel="stylesheet">
-    
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
     <style>
       body {
         padding-top: 70px;
@@ -19,6 +20,12 @@
         padding-top: 20px;
       }
     </style>
+
+    <script type="text/javascript">
+      $(function() {
+        $('#nav-<%=title.toLowerCase() %>').addClass('active');
+      });
+    </script>
   </head>
 
   <body>
@@ -36,8 +43,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Documentation</a></li>            
-            <li><a href="#">About</a></li>
+            <li id="nav-documentation"><a href="/documentation">Documentation</a></li>            
+            <li id="nav-about"><a href="/about">About</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -65,14 +72,14 @@
       <%- body %>
 
       <!-- Site footer -->      
-      <div class="footer">
+      <div class="footer" id="footer">
           <p>&copy; Coder Manual 2013</p>
       </div>
     </div>
 
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
   </body>
 </html>

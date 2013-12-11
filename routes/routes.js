@@ -91,4 +91,18 @@ module.exports = function(app) {
 			title: 'Profile'
 		});
 	});
+
+	// About
+	app.get('/about', function(req, res) {
+		res.render('about', {
+			title: 'About'
+		});
+	});
+
+	// Documentation
+	app.get('/documentation', function(req, res) {
+		res.render('documentation', {
+			title: 'Documentation'
+		});
+	});
 };
