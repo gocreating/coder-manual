@@ -1,4 +1,20 @@
-<%- contentFor('body') %>	
+<%- contentFor('body') %><!-- 
+	<link href="/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet">
+   <script src="/plugins/perfect-scrollbar/jquery.mousewheel.js"></script>
+   <script src="/plugins/perfect-scrollbar/perfect-scrollbar.js"></script>
+ -->
+ 	<!-- 
+ 	<script type="text/javascript" src="/plugins/jquery.slimscroll.min.js"></script>
+ -->
+ 	<!-- <link rel="stylesheet" href="plugins/lionbars/lionbars.css" type="text/css" /> -->
+<!-- 
+ 	<script type="text/javascript" src="/plugins/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.js"></script>
+ 	<link rel="stylesheet" href="/plugins/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.css" type="text/css" /> -->
+
+ 	<script type="text/javascript" src="/plugins/jquery.tinyscrollbar.min.js"></script>
+
+ 	<script src="plugins/lionbars/jquery.lionbars.0.3.js"></script>
+
 	<script src="http://demos.flesler.com/jquery/scrollTo/js/jquery.scrollTo-min.js">
 	</script>
 	<script type="text/javascript">
@@ -15,9 +31,8 @@
 
 			$('#sidebar').on('activate.bs.scrollspy', function () {
 				var href = $('#sidebar .active:first > a').attr('href');
-				// console.log(href);
-				$('#sidebar').scrollTo($('a[href='+href+']'), 500);
-			})
+				$('#sidebar').scrollTo($('a[href='+href+']'), 100);
+			});
 		});
 	</script>
 
@@ -30,23 +45,25 @@
 			padding-top: 35px;
 		}
 
-		.affix-top {
-			width:212px;
-		}
+		@media(min-width:767px) {
+			.affix-top {
+				width:212px;
+			}
 
-		.affix {
-			position: fixed;
-			width:212px;
-			top: 70px;
-		}
+			.affix {
+				position: fixed;
+				width:212px;
+				top: 70px;
+			}
 
-		.affix-bottom {
-			position: absolute;
-			width:212px;
+			.affix-bottom {
+				position: absolute;
+				width:212px;
+			}
 		}
 
 		#sidebar {
-			max-height: 300px;
+			max-height: 450px;
 			overflow-y: auto;
 		}
 
@@ -67,6 +84,14 @@
 			margin: 3px 0px;
 		}
 	</style>
+
+	<div class="row">
+		<div class="col-md-9 col-md-offset-3">
+			<div class="page-header">
+			  <h1>Title <small>Subtext</small></h1>
+			</div>
+		</div>
+	</div>
 
 	<div class="row">
 		<div class="col-md-3">
@@ -92,7 +117,7 @@
 			</div>
       </div>
 
-		<div class="col-md-7" id="content">
+		<div class="col-md-9" id="content">
 			<section id="title1">				
 				<h1>title1</h1>
 				content<br>content<br>content<br>content<br>content<br>content<br>content<br>content

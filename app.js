@@ -1,5 +1,6 @@
 var express = require('express');
 var routes = require('./routes/routes');
+var path = require('path');
 
 var config = require('./config/config');
 var flash = require('connect-flash');
@@ -33,6 +34,7 @@ app.configure(function() {
 		res.locals.session = req.session;
 		next();
 	});
+	app.use(express.static(path.join(__dirname, 'public')));
 });
 
 // var livereload = require('livereload');
